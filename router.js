@@ -22,10 +22,7 @@ const sideMenu = DrawerNavigator({
     SincronizedActivities: {
         screen: SincronizedActivity,
         navigationOptions: {
-            headerStyle: {
-                height: 0
-            },
-            drawerIcon: <Icon ios="ios-cloud-done" android="md-cloud-done"/>
+            drawerIcon: <Icon ios="ios-cloud-circle" android="md-cloud-circle"/>
         }
     },
     Logout: {

@@ -15,10 +15,9 @@ import {
     Text,
     Card,
     CardItem,
-    Thumbnail
 } from 'native-base';
-import {Row, Grid} from 'react-native-easy-grid';
 import ActivityRow from './ActivityRow';
+import CustomHeader from './CustomHeader';
 const logo = require('../img/smartTasks.png');
 
 const activities = [
@@ -67,24 +66,10 @@ export default class ActivityList extends Component {
         };
         return (
             <Container>
-                <Header>
-                    <Left>
-                        <Button onPress={() => this.props.navigation.navigate('DrawerOpen')} transparent>
-                            <Icon ios='ios-menu' android="md-menu"/>
-                        </Button>
-                    </Left>
-                    <Body>
-                    <Grid>
-                        <Row style={{justifyContent: 'center', alignItems: 'center'}}>
-                            <Thumbnail square small source={require('../img/smartTasks.png')}/>
-                            <Title>
-                                SmartTasks
-                            </Title>
-                        </Row>
-                    </Grid>
-                    </Body>
-                    <Right />
-                </Header>
+                <CustomHeader
+                    sideMenu={this.props.navigation}
+
+                />
                 <Content padder>
                     {renderRow()}
                 </Content>
