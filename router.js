@@ -65,6 +65,6 @@ const stackNavigator = StackNavigator({
             }
         },
     }
-});
+}, {headerMode: 'none'});
 
 export default stackNavigator;
