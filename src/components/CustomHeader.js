@@ -17,7 +17,7 @@ import {Row, Grid} from 'react-native-easy-grid';
 
 export default class CustomHeader extends Component {
     render() {
-        const rederButton = () => {
+        const renderButton = () => {
             if (!this.props.sideMenuComponent) {
                 return (
                     <Button onPress={() => this.props.sideMenu.navigate('DrawerOpen')} transparent>
@@ -26,7 +26,7 @@ export default class CustomHeader extends Component {
                 )
             } else {
                 return (
-                    <Button onPress={() => this.props.sideMenu.navigate('ActivityList')} transparent>
+                    <Button onPress={() => this.props.sideMenu.goBack()} transparent>
                         <Icon ios='ios-arrow-back' android="md-arrow-back"/>
                     </Button>
                 )
@@ -35,7 +35,7 @@ export default class CustomHeader extends Component {
         return (
             <Header>
                 <Left>
-                    {rederButton()}
+                    {renderButton()}
                 </Left>
                 <Body>
                 <Grid>

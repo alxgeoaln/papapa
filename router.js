@@ -58,10 +58,10 @@ const stackNavigator = StackNavigator({
     ActivityDetails: {
         screen: ActivityDetails,
         navigationOptions: {
-            title: 'SmartTasks',
-            headerTintColor: 'white',
+            // title: 'SmartTasks',
+            // headerTintColor: 'white',
             headerStyle: {
-                backgroundColor: '#3F51B5'
+                height: 0
             }
         },
     }
