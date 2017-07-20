@@ -79,4 +79,3 @@ export default class ActivityList extends Component {
 }
 
 const styles = StyleSheet.create({});
-

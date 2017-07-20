@@ -68,6 +68,7 @@ export default class ActivityRow extends Component {
                         <Text style={{marginTop: 10}}>Completarea registrului de control:</Text>
                         <Picker
                             mode="dropdown"
+                            iosHeader="Alege status registru"
                             placeholder="Alege status registru"
                             selectedValue={this.state.registryStatus}
                             onValueChange={this.registryStatus.bind(this)}
@@ -83,6 +84,7 @@ export default class ActivityRow extends Component {
                         <Picker
                             mode="dropdown"
                             placeholder="Alege status jurnal"
+                            iosHeader="Alege status jurnal"
                             selectedValue={this.state.serviceJurnal}
                             onValueChange={this.jurnalStatus.bind(this)}
                         >

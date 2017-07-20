@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import {Container, Content, Input, Item, Button, Text, Toast} from 'native-base';
 import ActivityList from './ActivityList';
-
+import Alert from './Alert';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -24,16 +24,45 @@ export default class Login extends Component {
         this.state = {
             username: "",
             password: "",
-            isLoggedIn: false
+            showAlert: false
         }
     }
 
     login() {
-        const {navigate} = this.props.navigation;
-        navigate('main');
+
+        if(this.state.username !== user.username){
+            this.setState({
+                showAlert: true
+            });
+        } else {
+            this.setState({
+                showAlert: false
+            });
+            const {navigate} = this.props.navigation;
+            navigate('main');
+        }
+
+    }
+
+    alertOkButton() {
+        this.setState({
+            showAlert: false
+        });
     }
 
     render() {
+        const show = () => {
+            if(this.state.showAlert){
+                return(
+                    <Alert
+                        error={"Utilizator sau parola gresita"}
+                        okButton={() => this.alertOkButton()}
+                    />
+                )
+            }
+        };
+
+
         return (
             <Container>
                 <Content padder>
@@ -54,6 +83,7 @@ export default class Login extends Component {
                         <Text>Login</Text>
                     </Button>
                 </Content>
+                {show()}
             </Container>
         );
     }
